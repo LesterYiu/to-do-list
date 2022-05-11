@@ -91,3 +91,28 @@ formEl.addEventListener('submit', function (e) {
 // EVENT PROPAGATION/EVENT BUBBLING: If you have an event occurs on an element, then it is going to be known of from all generation prior to that element.
 
     //This can be used to add events that we want to an element's children. Summary: in order to attach a click event listener to the li's which do not exist on the page yet, we can use event propagation to delegate the click event to the ul!
+
+ulEl.addEventListener('click',function (e) {
+
+    // the "this keyword" represents the object which owns the code which is currently running. 
+        //In this example
+            //console.log(this);
+        //this is being ran by the callback function which is owned by the object of "ulEl"
+
+        //the event object stores all information of the event occurs, including which element was clicked console.log(e.target);
+
+            //as long as we've clicked on the icon, then toggle between checked and unchecked
+
+        if (e.target.localName === 'i') {
+            console.log('checkbox clicked');
+            
+
+            //toggle between checked/unchecked on the target element;
+
+            e.target.classList.toggle('fa-square-check');
+
+            // this will toggle one option or the other
+
+            //one important thing to note, you can add multiple toggles, since multiple classes cannot be toggled, you can have two different states of classes
+        }
+})
