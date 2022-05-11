@@ -79,3 +79,15 @@ formEl.addEventListener('submit', function (e) {
 
     }
 });
+
+// NOTE: this will not work because you can only add event listeners to elements which exist in the DOM at the time of the code execution
+
+// const liEl = document.querySelector('li');
+
+// liEl.addEventListener('click' , function() {
+//     console.log('To do has been checked');
+// });
+
+// EVENT PROPAGATION/EVENT BUBBLING: If you have an event occurs on an element, then it is going to be known of from all generation prior to that element.
+
+    //This can be used to add events that we want to an element's children. Summary: in order to attach a click event listener to the li's which do not exist on the page yet, we can use event propagation to delegate the click event to the ul!
